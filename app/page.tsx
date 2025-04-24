@@ -2,17 +2,19 @@
 import FadeUpWhenVisible from "@/components/firework/FadeUpWhenVisible";
 import Silder from "@/components/ui/Slider";
 import "../public/style/style.css"
-import TypingHeader from "@/components/้home/TypingHeader";
+import TypingHeader from "@/components/home/TypingHeader";
 import { quicksand } from "@/utils/fonts";
 import SliderRight from "@/components/ui/SliderRight";
 import FireworkButton from "@/components/FireworkButton";
 import CountdownTimer from "@/components/firework/CountdownTimer";
 import Image from "next/image";
 import WhackACat from "@/components/minigame/WhackACat";
+import CircleBackground from "@/components/home/CircleBackground";
 
 export default function Home() {
   return (
-    <main className={`${quicksand.className} bg-blue-200 dark:bg-blue-950`}>
+    <main className={`${quicksand.className} bg-[#f1f1e6] dark:bg-[#152331]`}>
+      <CircleBackground />
       <div className="relative flex items-center justify-center w-full h-screen overflow-hidden">
         {/* Background Image */}
         <div
@@ -55,12 +57,29 @@ export default function Home() {
       </div>
       {/* page3 */}
       <FadeUpWhenVisible>
-        <div className="flex flex-col items-center justify-center w-full h-screen">
-          <h1 className="text-xl md:text-2xl mb-4">We've been together for 18 months now</h1>
-          <div className="mb-4">
-            <CountdownTimer />
+        <div className="relative w-full h-screen overflow-hidden">
+          {/* element */}
+          <FadeUpWhenVisible>
+            <img src="/img/element/1.png" className="w-[75px] h-[75px] absolute top-10 left-5 w-8 opacity-70 rotate-0" />
+          </FadeUpWhenVisible>
+          <FadeUpWhenVisible>
+            <img src="/img/element/1.png" className="w-[75px] h-[75px] absolute bottom-10 right-10 w-8 opacity-70 rotate-50" />
+          </FadeUpWhenVisible>
+          <FadeUpWhenVisible>
+            <img src="/img/element/2.png" className="w-[120px] h-[120px] absolute top-10 right-10 w-8 opacity-70 rotate-0" />
+          </FadeUpWhenVisible>
+          <FadeUpWhenVisible>
+            <img src="/img/element/2.png" className="w-[150px] h-[150px] absolute bottom-10 left-5 w-8 opacity-70 rotate-50" />
+          </FadeUpWhenVisible>
+          <div className="flex flex-col items-center justify-center w-full h-full relative z-10">
+            <h1 className="text-xl md:text-2xl text-center mb-4">
+              We have been together for 18 months now
+            </h1>
+            <div className="mb-4">
+              <CountdownTimer />
+            </div>
+            <FireworkButton />
           </div>
-          <FireworkButton />
         </div>
       </FadeUpWhenVisible>
       {/* page4 */}
@@ -74,7 +93,7 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <div className="col-span-3 rounded-lg p-5 text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#7367F0] to-[#43CBFF] hover:scale-105 transition-transform duration-300">
+          <div className="col-span-3 rounded-lg p-5 text-md sm:text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#7367F0] to-[#43CBFF] hover:scale-105 transition-transform duration-300">
             Love my girlfriend
           </div>
         </div>
@@ -87,7 +106,7 @@ export default function Home() {
           />
         </div>
         <div className="w-full grid grid-cols-8 gap-5">
-          <div className="col-span-3 rounded-lg p-5 text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#43CBFF] to-[#7367F0] hover:scale-105 transition-transform duration-300">
+          <div className="col-span-3 rounded-lg p-5 text-md sm:text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#43CBFF] to-[#7367F0] hover:scale-105 transition-transform duration-300">
             The most
           </div>
           <div className="col-span-5 aspect-[4/3] rounded-lg relative overflow-hidden hover:scale-105 transition-transform duration-300">
