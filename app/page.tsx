@@ -56,7 +56,7 @@ export default function Home() {
       {/* page3 */}
       <FadeUpWhenVisible>
         <div className="flex flex-col items-center justify-center w-full h-screen">
-          <h1 className="text-xl md:text-2xl mb-4">We've been together for 18 months now</h1>
+          <h1 className="text-xl md:text-2xl mb-4">We have been together for 18 months now</h1>
           <div className="mb-4">
             <CountdownTimer />
           </div>
