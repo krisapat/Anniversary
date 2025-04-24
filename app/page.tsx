@@ -1,103 +1,110 @@
+
+import FadeUpWhenVisible from "@/components/firework/FadeUpWhenVisible";
+import Silder from "@/components/ui/Slider";
+import "../public/style/style.css"
+import TypingHeader from "@/components/้home/TypingHeader";
+import { quicksand } from "@/utils/fonts";
+import SliderRight from "@/components/ui/SliderRight";
+import FireworkButton from "@/components/FireworkButton";
+import CountdownTimer from "@/components/firework/CountdownTimer";
 import Image from "next/image";
+import WhackACat from "@/components/minigame/WhackACat";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main className={`${quicksand.className} bg-blue-200 dark:bg-blue-950`}>
+      <div className="relative flex items-center justify-center w-full h-screen overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute w-[90%] h-[90%] bg-cover bg-center brightness-50 rounded-2xl"
+          style={{
+            backgroundImage: "url('/img/home.png')",
+            padding: "20px",
+            boxSizing: "border-box",
+          }}
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Overlay */}
+        <div className="absolute w-[90%] h-[90%] bg-black/40 z-10 rounded-2xl" />
+        {/* Content Centered */}
+        <div className="relative z-10 flex items-center justify-center h-[90%] w-[90%] rounded-2xl shadow-xl overflow-hidden">
+          <div className="text-center px-4 space-y-5">
+            <FadeUpWhenVisible>
+              <TypingHeader
+                className="text-4xl font-bold md:text-6xl mb-4 text-white"
+                words={['Happy Anniversary', 'Together is my favorite place to be', 'Grateful for every moment with you']}
+              />
+            </FadeUpWhenVisible>
+            <FadeUpWhenVisible>
+              <p className="text-xl md:text-2xl text-white">
+                Happy 18th month anniversary
+                <br />Love you my love
+              </p>
+            </FadeUpWhenVisible>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </div>
+
+      {/* page2 */}
+      <div className="p-8 space-y-4">
+        <FadeUpWhenVisible>
+          <Silder />
+        </FadeUpWhenVisible>
+        <FadeUpWhenVisible>
+          <SliderRight />
+        </FadeUpWhenVisible>
+      </div>
+      {/* page3 */}
+      <FadeUpWhenVisible>
+        <div className="flex flex-col items-center justify-center w-full h-screen">
+          <h1 className="text-xl md:text-2xl mb-4">We've been together for 18 months now</h1>
+          <div className="mb-4">
+            <CountdownTimer />
+          </div>
+          <FireworkButton />
+        </div>
+      </FadeUpWhenVisible>
+      {/* page4 */}
+      <div className="w-full max-w-3xl p-8 space-y-5 m-auto text-white">
+        <div className="w-full grid grid-cols-8 gap-5 ">
+          <div className="col-span-5 aspect-[4/3] rounded-lg relative overflow-hidden hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/img/grid1.png"
+              alt="My image"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="col-span-3 rounded-lg p-5 text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#7367F0] to-[#43CBFF] hover:scale-105 transition-transform duration-300">
+            Love my girlfriend
+          </div>
+        </div>
+        <div className=" aspect-[4/3] w-full rounded-lg relative overflow-hidden hover:scale-105 transition-transform duration-300">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/img/grid2.png"
+            alt="My image"
+            fill
+            className="object-cover"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+        <div className="w-full grid grid-cols-8 gap-5">
+          <div className="col-span-3 rounded-lg p-5 text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#43CBFF] to-[#7367F0] hover:scale-105 transition-transform duration-300">
+            The most
+          </div>
+          <div className="col-span-5 aspect-[4/3] rounded-lg relative overflow-hidden hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/img/grid3.png"
+              alt="My image"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+        </div>
+      </div>
+      {/* page4 */}
+      <div className="p-10">
+        <WhackACat />
+      </div>
+    </main>
   );
 }

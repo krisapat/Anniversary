@@ -1,0 +1,65 @@
+/*auto run*/
+.slider {
+    mask-image: linear-gradient(to right,
+            transparent,
+            #000000 5% 95%,
+            transparent);
+}
+.slider .list {
+    min-width: calc(var(--width) * var(--quantity));
+}
+
+.slider .list .item {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 10s);
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: calc(var(--width) * -1);
+    }
+}
+
+.slider:hover .item {
+    animation-play-state: paused;
+    filter: grayscale(1);
+}
+
+.slider .item:hover {
+    filter: grayscale(0);
+}
+
+.slider[reverse="true"] .item {
+    animation: reversePlay 10s linear infinite;
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 10s);
+}
+.slider[reverse="true"]:hover .item {
+    animation-play-state: paused;
+    filter: grayscale(1);
+}
+
+.slider[reverse="true"] .item:hover {
+    filter: grayscale(0);
+}
+
+@keyframes reversePlay {
+    from {
+        left: calc(var(--width) * -1);
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+/*autorun*/
