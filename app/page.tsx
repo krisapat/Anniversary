@@ -56,7 +56,7 @@ export default function Home() {
       {/* page3 */}
       <FadeUpWhenVisible>
         <div className="flex flex-col items-center justify-center w-full h-screen">
-          <h1 className="text-xl md:text-2xl mb-4">We have been together for 18 months now</h1>
+          <h1 className="text-xl md:text-2xl text-center mb-4">We have been together for 18 months now</h1>
           <div className="mb-4">
             <CountdownTimer />
           </div>
@@ -74,7 +74,7 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <div className="col-span-3 rounded-lg p-5 text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#7367F0] to-[#43CBFF] hover:scale-105 transition-transform duration-300">
+          <div className="col-span-3 rounded-lg p-5 text-md sm:text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#7367F0] to-[#43CBFF] hover:scale-105 transition-transform duration-300">
             Love my girlfriend
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function Home() {
           />
         </div>
         <div className="w-full grid grid-cols-8 gap-5">
-          <div className="col-span-3 rounded-lg p-5 text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#43CBFF] to-[#7367F0] hover:scale-105 transition-transform duration-300">
+          <div className="col-span-3 rounded-lg p-5 text-md sm:text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#43CBFF] to-[#7367F0] hover:scale-105 transition-transform duration-300">
             The most
           </div>
           <div className="col-span-5 aspect-[4/3] rounded-lg relative overflow-hidden hover:scale-105 transition-transform duration-300">
